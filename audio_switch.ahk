@@ -1,37 +1,37 @@
 ﻿#Requires AutoHotkey >=2.0
 #SingleInstance Force
 
-; Definir rutas de los íconos
-iconMonitor := 'D:\Documents\AutoHotkey\iconos\monitor.ico'
-iconCascos := 'D:\Documents\AutoHotkey\iconos\cascos.ico'
+; Define icon paths
+iconMonitor := '.\icons\monitor.ico'
+iconHeadphones := '.\icons\headphones.ico'
 
-; Nombres de los dispositivos de audio
-monitor := 'T22D390' ; El nombre del primer dispositivo de salida
-cascos := 'Philips Fidelio X2HR' ; El nombre del segundo dispositivo de salida
+; Audio device names
+monitor := 'T22D390' ; Name of the first output device
+headphones := 'Philips Fidelio X2HR' ; Name of the second output device
 
-; Establecer la salida predeterminada a "monitor" y configurar el ícono inicial
+; Set default output to "monitor" and configure initial icon
 Run('C:\Program Files\NirSoft\nircmd\nircmd.exe setdefaultsounddevice "' monitor '" 0')
 Run('C:\Program Files\NirSoft\nircmd\nircmd.exe setdefaultsounddevice "' monitor '" 1')
 Run('C:\Program Files\NirSoft\nircmd\nircmd.exe setdefaultsounddevice "' monitor '" 2')
 currentDevice := monitor
-TraySetIcon(iconMonitor) ; Establecer el ícono inicial al monitor
+TraySetIcon(iconMonitor) ; Set initial icon to monitor
 
-ScrollLock::SwitchAudioDevice() ; La tecla para alternar el dispositivo de salida
+ScrollLock::SwitchAudioDevice() ; Key to toggle output device
 
 SwitchAudioDevice() {
-    global currentDevice, monitor, cascos, iconMonitor, iconCascos
+    global currentDevice, monitor, headphones, iconMonitor, iconHeadphones
     if (currentDevice = monitor) {
-        Run('C:\Program Files\NirSoft\nircmd\nircmd.exe setdefaultsounddevice "' cascos '" 0')
-        Run('C:\Program Files\NirSoft\nircmd\nircmd.exe setdefaultsounddevice "' cascos '" 1')
-        Run('C:\Program Files\NirSoft\nircmd\nircmd.exe setdefaultsounddevice "' cascos '" 2')
-        currentDevice := cascos
-        TraySetIcon(iconCascos) ; Cambia el ícono a cascos
-    } else if (currentDevice = cascos) {
+        Run('C:\Program Files\NirSoft\nircmd\nircmd.exe setdefaultsounddevice "' headphones '" 0')
+        Run('C:\Program Files\NirSoft\nircmd\nircmd.exe setdefaultsounddevice "' headphones '" 1')
+        Run('C:\Program Files\NirSoft\nircmd\nircmd.exe setdefaultsounddevice "' headphones '" 2')
+        currentDevice := headphones
+        TraySetIcon(iconHeadphones) ; Change icon to headphones
+    } else if (currentDevice = headphones) {
         Run('C:\Program Files\NirSoft\nircmd\nircmd.exe setdefaultsounddevice "' monitor '" 0')
         Run('C:\Program Files\NirSoft\nircmd\nircmd.exe setdefaultsounddevice "' monitor '" 1')
         Run('C:\Program Files\NirSoft\nircmd\nircmd.exe setdefaultsounddevice "' monitor '" 2')
         currentDevice := monitor
-        TraySetIcon(iconMonitor) ; Cambia el ícono a monitor
+        TraySetIcon(iconMonitor) ; Change icon to monitor
     }
 }
 

@@ -2,10 +2,10 @@
 #SingleInstance Force
 
 XButton1:: {
-    SendInput "{XButton1 down}"  ; Mantiene el botón presionado
-    KeyWait "XButton1"  ; Espera a que el botón se suelte
-    Sleep 20  ; Mantiene el clic durante 20 ms después de soltar
-    SendInput("{XButton1 up}")  ; Suelta el botón
+    SendInput "{XButton1 down}"  ; Holds the button down
+    KeyWait "XButton1"           ; Waits for button release
+    Sleep 20                     ; Keeps click for 20ms after release
+    SendInput("{XButton1 up}")   ; Releases the button
 }
 
 Persistent
