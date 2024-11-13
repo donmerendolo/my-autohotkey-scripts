@@ -1,6 +1,7 @@
 ﻿#Requires AutoHotkey >=2.0
 #SingleInstance Force
 
-!Space::LButton
+Tab::LButton
+F1::Tab
 
 Persistent
