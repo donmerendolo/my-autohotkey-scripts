@@ -5,6 +5,8 @@ You'll have to customize some of these.
 
 - **audio_switch.ahk**: switch between monitor speakers and headphones pressing 1 key (Scroll Lock) (need [NirCmd](https://www.nirsoft.net/utils/nircmd.html) installed and in Path). Shows an icon with the audio output device in taskbar.
 
+- **caps_lock_esc.ahk**: swap Caps Lock and Esc.
+
 - **edge_url_incognito.ahk**: open an URL in clipboard in Edge in incognito pressing 1 key (Pause).
 
 - **left_click.ahk**: left click in my mouse stopped working today so I remapped it to Esc.
