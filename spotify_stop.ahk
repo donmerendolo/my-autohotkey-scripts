@@ -1,4 +1,4 @@
-﻿#Requires AutoHotkey >=2.0
+#Requires AutoHotkey >=2.0
 #SingleInstance Force
 
 StopSpotifyRunning := false
@@ -15,7 +15,7 @@ StopSpotify() {
     try {
         Title := WinGetTitle("ahk_exe spotify.exe") ; Get the current song title
     }
-    Loop {
+    loop {
         Sleep 10
         try {
             NewTitle := WinGetTitle("ahk_exe spotify.exe") ; Get the new song title
